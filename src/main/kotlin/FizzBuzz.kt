@@ -1,35 +1,32 @@
-/*
- * The function is expected to return an INTEGER.
- * The function accepts following parameters:
- *  1. INTEGER steps
- *  2. STRING path
- */
+fun Int.isDivisibleFor(n: Int): Boolean = this % n == 0
 
-fun countingValleys(steps: Int, path: String): Int {
-    // Write your code here
-    var altitude = 0
-    var valleys = 0
-
-    for (step in 0 until steps) {
-        if(path[step] == 'D'){
-            altitude--
-        }
-        else {
-            if(altitude == -1){
-                valleys++
-            }
-            altitude++
+fun fizzBuzz(n: Int): List<String> {
+    val output: MutableList<String> = MutableList(n) { "" }
+    for (i in 1..n) {
+        when {
+            i.isDivisibleFor(3) && i.isDivisibleFor(5) -> output[i - 1] = "FizzBuzz"
+            i.isDivisibleFor(3) -> output[i - 1] = "Fizz"
+            i.isDivisibleFor(5) -> output[i - 1] = "Buzz"
+            else -> output[i - 1] = i.toString()
         }
     }
-    return valleys
+    return output
+}
+
+// More idiomatic Kotlin
+fun fizzBuzzIdiomatic(n: Int): List<String> {
+    return (1..n).map {
+        when {
+            it.isDivisibleFor(15) -> "FizzBuzz"
+            it.isDivisibleFor(3) -> "Fizz"
+            it.isDivisibleFor(5) -> "Buzz"
+            else -> it.toString()
+        }
+    }
 }
 
 fun main(args: Array<String>) {
-    val steps = readLine()!!.trim().toInt()
-
-    val path = readLine()!!
-
-    val result = countingValleys(steps, path)
-
-    println(result)
+    println(fizzBuzz(3))
+    println(fizzBuzz(5))
+    println(fizzBuzzIdiomatic(15))
 }
