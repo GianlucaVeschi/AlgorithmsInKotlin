@@ -1,3 +1,5 @@
+package leetcode
+
 fun Int.isDivisibleFor(n: Int): Boolean = this % n == 0
 
 fun fizzBuzz(n: Int): List<String> {
@@ -23,10 +25,4 @@ fun fizzBuzzIdiomatic(n: Int): List<String> {
             else -> it.toString()
         }
     }
-}
-
-fun main(args: Array<String>) {
-    println(fizzBuzz(3))
-    println(fizzBuzz(5))
-    println(fizzBuzzIdiomatic(15))
 }

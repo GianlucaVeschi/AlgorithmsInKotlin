@@ -1,9 +1,10 @@
-/*
+package leetcode
+
+/**
     Coding Challenge 1342
     Given an integer num, return the number of steps to reduce it to zero.
     In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
  */
-
 fun numberOfSteps(num: Int): Int {
     var input = num
     var output = 0
@@ -19,10 +20,4 @@ fun numberOfSteps(num: Int): Int {
     }
 
     return output
-}
-
-fun main(args: Array<String>) {
-    println(numberOfSteps(14))
-    println(numberOfSteps(8))
-    println(numberOfSteps(123))
 }

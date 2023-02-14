@@ -1,4 +1,4 @@
-/*
+package leetcode/*
  * The function is expected to return an INTEGER.
  * The function accepts following parameters:
  *  1. INTEGER steps
@@ -22,14 +22,4 @@ fun countingValleys(steps: Int, path: String): Int {
         }
     }
     return valleys
-}
-
-fun main(args: Array<String>) {
-    val steps = readLine()!!.trim().toInt()
-
-    val path = readLine()!!
-
-    val result = countingValleys(steps, path)
-
-    println(result)
 }
