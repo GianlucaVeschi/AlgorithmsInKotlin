@@ -1,4 +1,4 @@
-package leetcode
+package leetcode.starter
 
 fun Int.isDivisibleFor(n: Int): Boolean = this % n == 0
 
